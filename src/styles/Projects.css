@@ -1,0 +1,276 @@
+/* Container */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Project Card (même style que l’expérience) */
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  /* Inactive Cards */
+  .project-card.inactive {
+    opacity: 0.5;
+    filter: grayscale(40%);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Active Cards */
+  .project-card.active {
+    opacity: 1;
+    filter: grayscale(0%);
+    border: 2px solid rgba(29, 78, 216, 0.7);
+    box-shadow: 0px 4px 20px rgba(29, 78, 216, 0.3);
+    transform: scale(1.02);
+  }
+  
+  /* Project Image */
+  .project-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Project Info */
+  .project-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 10px;
+  }
+  
+  /* Skills */
+  .skills {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  /* Skill Badge */
+  .skill-badge {
+    background: rgba(29, 78, 216, 0.2);
+    color: rgb(109 191 237 / 90%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    max-height: 2rem;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .project-skill-badge {
+    color: white;
+  }
+  
+  .skill-badge:hover {
+    background: rgba(29, 78, 216, 0.5);
+  }
+  
+  /* Modal Overlay */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  .project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(10px); /* Flou */
+    -webkit-backdrop-filter: blur(10px); /* Flou Safari */
+  }
+  
+  /* --- Modale responsive --- */
+  .modal-content {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px; /* Limite la taille sur grands écrans */
+    max-height: 80vh; /* Pour éviter qu'elle déborde */
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s ease;
+  }
+  
+  /* Modal Image */
+  .modal-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Modal Link */
+  .modal-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  
+  .modal-link:hover {
+    color: #3b82f6;
+  }
+  
+  /* --- Texte adaptatif pour petits écrans --- */
+@media (max-width: 768px) {
+    .modal-content {
+      padding: 15px;
+      max-width: 90%;
+    }
+    
+    .project-title {
+      font-size: 1.2rem;
+    }
+    
+    .description, .modal-content p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* --- Bouton de fermeture --- */
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
+  
+  /* --- Animation --- */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+ /* Section des filtres */
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filters-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    max-width: 100%;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+  
+  .filters::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .filters::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  .filter-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0.7; /* Rendre les boutons moins visibles par défaut */
+  }
+  
+  .filter-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 1; /* Mettre en évidence au survol */
+    border: 2px solid #1d4ed8; /* Contour de surbrillance de couleur fixe */
+  }
+  
+  .filter-button.active {
+    opacity: 1; /* Met en évidence quand actif */
+    border: 2px solid #1d4ed8; /* Contour de surbrillance de couleur fixe */
+  }
+  
+  .clear-filter {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7; /* Rendre moins visible */
+    transition: all 0.3s ease;
+  }
+  
+  .clear-filter:hover {
+    opacity: 1; /* Mettre en évidence au survol */
+  }
+
+  h3 {
+    margin-top: 15px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  strong {
+    color: #F57C00;
+  }
+  

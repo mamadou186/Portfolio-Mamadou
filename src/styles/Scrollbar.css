@@ -1,0 +1,24 @@
+/* Webkit (Chrome, Safari) */
+.scrollable-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb {
+    background: rgba(29, 78, 216, 0.5);
+    border-radius: 10px;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(29, 78, 216, 0.8);
+  }
+  
+  /* Firefox */
+  .scrollable-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(29, 78, 216, 0.5) transparent;
+  }
+  
