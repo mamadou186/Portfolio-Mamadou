@@ -11,8 +11,18 @@ const skills = [
   { id: "collaborer", name: "Collaborer", color: "#212121", description: "Développer des aptitudes pour travailler efficacement en équipe." }
 ];
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  details: string;
+  image: string;
+  skills: string[];
+}
+
+
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
 
