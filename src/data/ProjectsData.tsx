@@ -5,6 +5,7 @@ import projet5 from '../images/projects/projet5.png';
 import projet6 from '../images/projects/projet-reseau.jpg';
 import projet7 from '../images/projects/projet-mongo.png';
 import projet8 from '../images/projects/projet-mtc.png';
+import projet9 from '../images/projects/projet-pro.jpg';
 
 export const projects = [
     {
@@ -288,5 +289,60 @@ export const projects = [
           <li><strong style="color: #D32F2F;">three.js</strong></li>
         </ul>
       `
-    }    
+    },
+    
+    {
+      id: 8,
+      title: "Projets Professionnels - Groupama Supports et Services",
+      image: projet9,
+      description: "Participation à des projets de développement web en entreprise avec un fort accent sur la sécurité et les bonnes pratiques.",
+      technologies: ["Drupal", "Symfony", "Bootstrap", "Stimulus", "GitLab", "Jira"],
+      skills: ["realiser", "optimiser", "administrer", "collaborer"],
+      details: `
+        En tant que <strong style="color: #D32F2F;">développeur au sein de Groupama Supports et Services</strong>, j'ai eu l'opportunité de participer à plusieurs projets professionnels visant à répondre aux besoins métiers internes du groupe. Ces projets m'ont permis de travailler dans un environnement de <strong style="color: #FBC02D;">grande entreprise</strong> où la <strong style="color: #FBC02D;">sécurité</strong> et le <strong style="color: #F57C00;">respect des bonnes pratiques</strong> sont primordiaux.
+    
+        <h3 style="color: #D32F2F;">Compétence : Réaliser</h3>
+        J'ai contribué à deux projets principaux :
+        <ul>
+          <li>Un <strong style="color: #D32F2F;">site de recherche documentaire</strong> développé en <strong>Drupal</strong> avec <strong>Bootstrap</strong> pour le frontend, permettant aux collaborateurs de <strong style="color: #D32F2F;">faciliter la recherche d’informations métiers</strong> et de <strong style="color: #D32F2F;">stocker de la documentation</strong> de manière centralisée et sécurisée.</li>
+          <li>Un <strong style="color: #D32F2F;">site de génération de devis</strong> en <strong>Symfony</strong> utilisant <strong>Bootstrap</strong> et <strong>Stimulus</strong>, conçu pour créer <strong style="color: #D32F2F;">rapidement des devis d'assurance</strong> (auto et habitation) avec un <strong style="color: #D32F2F;">workflow fluide et intuitif</strong>.</li>
+        </ul>
+        Mon rôle consistait à :
+        <ul>
+          <li>Participer au <strong style="color: #D32F2F;">développement de nouveaux écrans</strong> et fonctionnalités.</li>
+          <li>Effectuer la <strong style="color: #D32F2F;">correction de bugs</strong> et l’<strong style="color: #D32F2F;">ajout de nouvelles fonctionnalités</strong> conformément aux spécifications métiers.</li>
+          <li>Contribuer à l'amélioration de l’<strong style="color: #D32F2F;">ergonomie</strong> et de l’<strong style="color: #D32F2F;">expérience utilisateur</strong>.</li>
+        </ul>
+    
+        <h3 style="color: #F57C00;">Compétence : Optimiser</h3>
+        J'ai travaillé sur l’<strong style="color: #F57C00;">optimisation des performances</strong> des applications et leur <strong style="color: #F57C00;">compatibilité multi-navigateurs</strong> en appliquant les <strong style="color: #F57C00;">bonnes pratiques du développement web moderne</strong>. Mon intervention a permis de garantir des <strong style="color: #F57C00;">temps de chargement rapides</strong> et une <strong style="color: #F57C00;">navigation fluide</strong> pour les utilisateurs finaux.
+    
+        <h3 style="color: #FBC02D;">Compétence : Administrer</h3>
+        La <strong style="color: #FBC02D;">sécurité</strong> a été une priorité dans ces projets. Étant donné le <strong style="color: #FBC02D;">contexte d’une grande entreprise</strong>, nous avons mis en place des pratiques strictes :
+        <ul>
+          <li>Développement sur des <strong style="color: #FBC02D;">machines virtuelles sécurisées</strong>.</li>
+          <li>Utilisation de <strong style="color: #FBC02D;">GitLab</strong> pour la gestion du code, avec des <strong style="color: #FBC02D;">pipelines CI/CD</strong> pour des déploiements sécurisés et contrôlés.</li>
+          <li>Respect des <strong style="color: #FBC02D;">environnements isolés</strong> : développement, recette, production.</li>
+          <li>Gestion des tâches et des tickets via <strong style="color: #FBC02D;">Jira</strong>, avec un <strong style="color: #FBC02D;">suivi précis des incidents et des évolutions</strong>.</li>
+          <li>Application de <strong style="color: #FBC02D;">politiques de sécurité strictes</strong> : contrôle des accès, <strong style="color: #FBC02D;">authentification sécurisée</strong> et <strong style="color: #FBC02D;">revue de code rigoureuse</strong>.</li>
+        </ul>
+    
+        <h3 style="color: #212121;">Compétence : Collaborer</h3>
+        Travailler chez <strong style="color: #212121;">Groupama Supports et Services</strong> a été l'occasion de <strong style="color: #212121;">développer mes compétences en travail d'équipe</strong> et en <strong style="color: #212121;">gestion de projets collaboratifs</strong>. Nous avons utilisé <strong style="color: #212121;">Jira</strong> pour le suivi des <strong style="color: #212121;">tickets et des évolutions</strong> et pratiqué <strong style="color: #212121;">l’intégration continue</strong> avec <strong style="color: #212121;">GitLab</strong> afin de garantir un code de qualité et de simplifier le <strong style="color: #212121;">déploiement en production</strong>. Les échanges réguliers avec les équipes et les <strong style="color: #212121;">revues de code croisées</strong> ont permis de maintenir un <strong style="color: #212121;">niveau de qualité élevé</strong> tout au long des projets.
+    
+        <h3>Résultats et Bilan</h3>
+        Ces projets m'ont permis de <strong style="color: #D32F2F;">maîtriser les technologies Drupal et Symfony</strong> et de <strong style="color: #FBC02D;">développer une expertise solide en sécurité informatique</strong> et en <strong style="color: #F57C00;">méthodologies de développement en entreprise</strong>. J'ai appris à <strong style="color: #212121;">travailler de manière rigoureuse</strong> et à <strong style="color: #FBC02D;">respecter les normes de sécurité et de qualité</strong> attendues dans un grand groupe.
+    
+        <h3>Langages Utilisés :</h3>
+        <ul>
+          <li><strong style="color: #D32F2F;">Drupal</strong></li>
+          <li><strong style="color: #D32F2F;">Symfony</strong></li>
+          <li><strong style="color: #D32F2F;">Bootstrap</strong></li>
+          <li><strong style="color: #D32F2F;">Stimulus</strong></li>
+          <li><strong style="color: #D32F2F;">GitLab</strong></li>
+          <li><strong style="color: #D32F2F;">Jira</strong></li>
+        </ul>
+      `
+    }
+    
 ];

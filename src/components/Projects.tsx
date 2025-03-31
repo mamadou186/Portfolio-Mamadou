@@ -20,20 +20,31 @@ interface Project {
   skills: string[];
 }
 
+// Ajout de l'interface des props
+interface ProjectsProps {
+  onModalToggle: (isOpen: boolean) => void;
+}
 
-const Projects = () => {
+const Projects = ({ onModalToggle }: ProjectsProps) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-
-  const handleProjectClick = (project: any) => setSelectedProject(project);
-  const handleCloseModal = () => setSelectedProject(null);
   const handleSkillClick = (skill: string) => setSelectedSkill(skill === selectedSkill ? null : skill);
 
   const filteredProjects = selectedSkill
     ? projects.filter((project) => project.skills.includes(selectedSkill))
     : projects;
 
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    onModalToggle(true); 
+  };
+  
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    onModalToggle(false);
+  };
+    
   return (
     <div id="PROJECTS" className="projects-container">
       {/* Filtres par compétences */}

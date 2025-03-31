@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "../styles/Home.css";
 import "../styles/Scrollbar.css";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
+
+import github from "../images/icons/logo-github.svg";
+import linkedin from "../images/icons/logo-linkedin.png";
+import cv from "../images/icons/logo-cv.png";
+import cvPdf from "../images/cv/cv.pdf";
 
 const sections = ["ABOUT", "EXPERIENCE", "PROJECTS"];
 const typingText = "Mamadou BA"; // Texte animé du titre
@@ -13,6 +18,15 @@ const Home = () => {
   const [active, setActive] = useState("ABOUT");
   const [gradientPosition, setGradientPosition] = useState({ x: "50%", y: "50%" });
   const [typedTitle, setTypedTitle] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const scrollableRef = useRef<HTMLDivElement>(null);
+  const birthDate = new Date(2003, 10, 4); // Date de naissance (04/11/2003)
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const month = today.getMonth() - birthDate.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
 
   // Effet de typing pour le titre
   useEffect(() => {
@@ -85,6 +99,26 @@ const Home = () => {
     setActive(newActive);
   };
 
+  // Redirige le scroll global vers scrollable-content
+  useEffect(() => {
+    const handleGlobalScroll = (event: WheelEvent) => {
+      if (isModalOpen) return; // 🚫 Désactive le scroll global si modale ouverte
+  
+      event.preventDefault();
+      const scrollable = scrollableRef.current;
+      if (scrollable) {
+        scrollable.scrollTop += event.deltaY;
+      }
+    };
+  
+    window.addEventListener("wheel", handleGlobalScroll, { passive: false });
+    return () => window.removeEventListener("wheel", handleGlobalScroll);
+  }, [isModalOpen]);
+
+  const handleModalToggle = (isOpen: boolean) => {
+    setIsModalOpen(isOpen);
+  };  
+
   return (
     <div className="container">
       {/* Effet de gradient qui suit la souris */}
@@ -105,6 +139,11 @@ const Home = () => {
           </h1>
           <p className="fs-5">Developpeur Web en alternance</p>
         </div>
+        <div className="skills">
+            <div className="skill-badge">Permis B</div>
+            <div className="skill-badge">{age} ans</div>
+            <div className="skill-badge">France</div>
+        </div>
         <nav className="nav-links">
           {sections.map((section) => (
             <div
@@ -118,13 +157,25 @@ const Home = () => {
             </div>
           ))}
         </nav>
+        <div className="social-icons">
+          <a href="https://github.com/mamadou186" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt="GitHub" className="icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/mamadou-ba-4b2031267/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedin} alt="LinkedIn" className="icon" />
+          </a>
+          <a href={cvPdf} download="Mamadou_BA_CV.pdf">
+            <img src={cv} alt="Télécharger CV" className="icon" />
+          </a>
+        </div>
+
       </div>
 
       {/* Scrollable Content */}
-      <motion.div className="scrollable-content" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onScroll={handleScroll}>
+      <motion.div className="scrollable-content" ref={scrollableRef} initial={{ opacity: 0 }} animate={{ opacity: 1 }} onScroll={handleScroll}>
         <About />
         <Experience />
-        <Projects />
+        <Projects onModalToggle={handleModalToggle} />
         <footer className="footer mt-5">
           <p className="footer-text">© {new Date().getFullYear()} Mamadou BA. Site réalisé en React (JSX/TSX).</p>
         </footer>
